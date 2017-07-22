@@ -1,0 +1,29 @@
+version: '2'
+services:
+ bob:
+  build: bob
+  ports:
+   - 18444:18444
+   - 18332:18332
+  command: ["sleep","10000"]
+  
+ alice:
+  build: alice
+  ports:
+   - 19444:18444
+   - 19332:18332
+  links:
+   - bob
+  command: ["sleep","10000"]
+  
+ henry:
+  build: henry
+  ports:
+   - 17444:18444
+   - 17332:18332
+  links:
+   - bob
+  command: ["sleep","10000"]
+
+
+  
