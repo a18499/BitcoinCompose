@@ -2,11 +2,11 @@
 
 echo "create private network"
 
-bitcoind -regtest -daemon –printtoconsole &  > /logs1.txt
+bitcoind -regtest -daemon
+
+sleep 1
 
 echo "join private network"
-bitcoin-cli -regtest addnode bob onetry > /logs2.txt
+bitcoin-cli -regtest addnode bob onetry
 
-sleep 10000
-
-
+sleep 600
