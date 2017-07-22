@@ -9,7 +9,7 @@ RUN apt-get update
 RUN apt-get install -y bitcoind
 
 RUN mkdir ~/.bitcoin
-RUN echo "rpcuser=test\nrpcpassword=test\n" > ~/.bitcoin/bitcoin.conf
+RUN echo "rpcuser=test\nrpcpassword=test\nrpcallowip=0.0.0.0/0\n" > ~/.bitcoin/bitcoin.conf
 
 RUN echo "alias rt='bitcoin-cli -regtest'" >> ~/.bashrc
 
