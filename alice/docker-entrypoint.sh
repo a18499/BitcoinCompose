@@ -4,7 +4,9 @@ echo "create private network"
 
 bitcoind -regtest -daemon
 
-sleep 1000
+sleep 1
 
 echo "join private network"
 bitcoin-cli -regtest addnode bob onetry
+
+sleep 600
