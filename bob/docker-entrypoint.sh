@@ -2,8 +2,6 @@
 
 echo "create private network"
 
-bitcoind -regtest -daemon –printtoconsole &
-
-sleep 10000
-
-
+bitcoind -regtest -daemon
+sleep 1000
+bitcoin-cli -regtest getinfo

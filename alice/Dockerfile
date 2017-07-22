@@ -14,6 +14,7 @@ RUN echo "rpcuser=test\nrpcpassword=test\n" > ~/.bitcoin/bitcoin.conf
 RUN echo "alias rt='bitcoin-cli -regtest'" >> ~/.bashrc
 
 COPY ./docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 
