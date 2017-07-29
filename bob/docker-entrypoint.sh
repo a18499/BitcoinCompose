@@ -3,4 +3,8 @@
 echo "create private network"
 
 bitcoind -regtest -daemon -server
-sleep 600
+
+while :
+do
+        sleep 1
+done

@@ -9,4 +9,7 @@ sleep 1
 echo "join private network"
 bitcoin-cli -regtest addnode bob onetry
 
-sleep 600
+while :
+do
+	sleep 1
+done
