@@ -26,5 +26,15 @@ services:
   links:
    - bob
 
+ charlie:
+  build: charlie
+  ports:
+   - 20444:18444
+   - 20332:18332
+  depends_on:
+   - bob
+  links:
+   - bob
+
 
   
