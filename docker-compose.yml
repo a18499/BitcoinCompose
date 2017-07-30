@@ -7,7 +7,7 @@ services:
    - 18332:18332
   
  alice:
-  build: alice
+  image: bitcoin:v0.14
   ports:
    - 19444:18444
    - 19332:18332
@@ -17,7 +17,7 @@ services:
    - bob
   
  henry:
-  build: henry
+  image: bitcoin:v0.14
   ports:
    - 17444:18444
    - 17332:18332
@@ -27,7 +27,7 @@ services:
    - bob
 
  charlie:
-  build: charlie
+  image: bitcoin:v0.14
   ports:
    - 20444:18444
    - 20332:18332
