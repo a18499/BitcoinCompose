@@ -5,10 +5,7 @@ Try to use dockercompose to create a lot of bitcoin node
 
 Usage:   
 ------
-  cd ClientBaseIamge  
-  ./buildbaseimage.sh  
-  cd ..  
-  sudo docker-comose up  
+  sudo docker-compose up  
 
 
 
