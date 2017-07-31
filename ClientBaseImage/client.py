@@ -1,6 +1,7 @@
 import thread
 import os
 import logging
+import random
 
 logging.basicConfig(level=logging.INFO)
 
@@ -21,21 +22,25 @@ def join_network():
 def show():
     logging.info("Test")
 
-def generateblock():
-    os.system('bitcoin-cli -regtest generate 100')
-    logging.info("generate 100 block")
+def generateblock(blocknumber):
+    os.system('bitcoin-cli -regtest generate '+str(blocknumber))
+    logging.info("generate "+str(blocknumber) +"block")
 
 #get balance
 def getbalance():
     os.system("bitcoin-cli -regtest getbalance")
 #main flow
-logging.info("Start main flow")
-os.system('sleep 5')
-generateblock()
 
+logging.info("Start main flow")
 
 while 1:
     logging.info("server is running")
     os.system('sleep 5')
+    logging.info("generate sleep time")
+    sleeptime = random.randint(0,15)
+    logging.info("sleeptime is  "+str(sleeptime))
+    os.system('sleep '+str(sleeptime))
+    blocknumber = random.randint(100,300)
+    generateblock(blocknumber)
     logging.info("getbalance")
     getbalance()
