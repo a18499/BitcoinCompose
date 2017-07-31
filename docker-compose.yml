@@ -1,42 +1,89 @@
 version: '2'
 services:
- bob:
-  build: bob
+ a:
+  build: MasterBaseImage
   image: bitcoinmnode
   ports:
-   - 18444:18444
-   - 18332:18332
+   - 20000:18332
   
- alice:
+ b:
   build: ClientBaseImage
   image: bitcoinnode
   ports:
-   - 19444:18444
-   - 19332:18332
+   - 20001:18332
   depends_on:
-   - bob
+   - a
   links:
-   - bob
+   - a
   
- henry:
+ c:
   image: bitcoinnode
   ports:
-   - 17444:18444
-   - 17332:18332
+   - 20002:18332
   depends_on:
-   - bob
+   - a
   links:
-   - bob
+   - a
 
- charlie:
+ d:
   image: bitcoinnode
   ports:
-   - 20444:18444
-   - 20332:18332
+   - 20003:18332
   depends_on:
-   - bob
+   - a
   links:
-   - bob
+   - a
 
+ e:
+  image: bitcoinnode
+  ports:
+   - 20004:18332
+  depends_on:
+   - a
+  links:
+   - a
 
-  
+ f:
+  image: bitcoinnode
+  ports:
+   - 20005:18332
+  depends_on:
+   - a
+  links:
+   - a
+
+ g:
+  image: bitcoinnode
+  ports:
+   - 20006:18332
+  depends_on:
+   - a
+  links:
+   - a
+
+ h:
+  image: bitcoinnode
+  ports:
+   - 20007:18332
+  depends_on:
+   - a
+  links:
+   - a
+
+ i:
+  image: bitcoinnode
+  ports:
+   - 20008:18332
+  depends_on:
+   - a
+  links:
+   - a
+
+ j:
+  image: bitcoinnode
+  ports:
+   - 20009:18332
+  depends_on:
+   - a
+  links:
+   - a
