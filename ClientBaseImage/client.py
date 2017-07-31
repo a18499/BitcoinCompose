@@ -15,7 +15,7 @@ def  create_daemon():
 #join pravite network
 def join_network():
     logging.info("Begin to join pravite network")
-    os.system('bitcoin-cli -regtest addnode bob onetry')
+    os.system('bitcoin-cli -regtest addnode a onetry')
     logging.info("Begin to join pravite network complete")
 
 #show information 

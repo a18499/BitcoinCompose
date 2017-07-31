@@ -16,7 +16,7 @@ bitcoind -regtest -daemon
 sleep 3
 
 echo "join private network"
-bitcoin-cli -regtest addnode bob onetry
+bitcoin-cli -regtest addnode a onetry
 
 python client.py
 
