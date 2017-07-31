@@ -2,12 +2,14 @@ version: '2'
 services:
  bob:
   build: bob
+  image: bitcoinmnode
   ports:
    - 18444:18444
    - 18332:18332
   
  alice:
-  image: bitcoin:v0.14
+  build: ClientBaseImage
+  image: bitcoinnode
   ports:
    - 19444:18444
    - 19332:18332
@@ -17,7 +19,7 @@ services:
    - bob
   
  henry:
-  image: bitcoin:v0.14
+  image: bitcoinnode
   ports:
    - 17444:18444
    - 17332:18332
@@ -27,7 +29,7 @@ services:
    - bob
 
  charlie:
-  image: bitcoin:v0.14
+  image: bitcoinnode
   ports:
    - 20444:18444
    - 20332:18332
