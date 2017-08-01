@@ -7,7 +7,7 @@ WORKDIR /root/bitcoin
 # Build bitcoin
 RUN ./autogen.sh
 RUN ./configure
-RUN make
+RUN make -j 4
 RUN make install
 
 COPY ./docker-entrypoint.sh /
