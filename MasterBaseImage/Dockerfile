@@ -1,9 +1,8 @@
 FROM bitcoindev
 
 # Clone git repository
-RUN git clone https://github.com/bitcoin/bitcoin.git ~/bitcoin
+RUN git clone https://github.com/fgwitera/btcregretarget.git ~/bitcoin
 WORKDIR /root/bitcoin
-RUN git checkout v0.14.0rc3
 
 # Build bitcoin
 RUN ./autogen.sh
