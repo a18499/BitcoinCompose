@@ -13,10 +13,10 @@ echo "create private network"
 
 bitcoind -regtest -daemon
 
-sleep 3
+sleep 5 
 
 echo "join private network"
-bitcoin-cli -regtest addnode a onetry
+bitcoin-cli -regtest addnode a add
 
 python client.py
 
