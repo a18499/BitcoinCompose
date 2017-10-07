@@ -3,7 +3,6 @@ services:
  bitcoindev:
   build: BitcoinDev
   image: bitcoindev
-
  a:
   build: MasterBaseImage
   image: bitcoinmnode
@@ -11,4 +10,83 @@ services:
    - 20000:18332
   depends_on:
   - bitcoindev
-
+ eb7f06a4-9d76-452c-8f4d-e972c3e602b6:
+  image: bitcoinnode
+  ports:
+   - 20001:18332
+  depends_on:
+   - a
+  links:
+   - a
+ a3c83835-55ca-4368-84cc-ade4995891db:
+  image: bitcoinnode
+  ports:
+   - 20002:18332
+  depends_on:
+   - a
+  links:
+   - a
+ eb504a2f-323b-4bf7-af9d-c82c47c94828:
+  image: bitcoinnode
+  ports:
+   - 20003:18332
+  depends_on:
+   - a
+  links:
+   - a
+ 939c5cea-2a03-41a8-be6b-09f653bb4c35:
+  image: bitcoinnode
+  ports:
+   - 20004:18332
+  depends_on:
+   - a
+  links:
+   - a
+ 81e7e524-bd4a-48d5-b15a-8dd3d969392d:
+  image: bitcoinnode
+  ports:
+   - 20005:18332
+  depends_on:
+   - a
+  links:
+   - a
+ 3e99cfa1-1638-4642-b668-4a9e4aed65f0:
+  image: bitcoinnode
+  ports:
+   - 20006:18332
+  depends_on:
+   - a
+  links:
+   - a
+ 5e14faed-d64b-46d9-8070-e611d560c236:
+  image: bitcoinnode
+  ports:
+   - 20007:18332
+  depends_on:
+   - a
+  links:
+   - a
+ f0061e41-3a64-4e0f-bcaa-2508547ca52d:
+  image: bitcoinnode
+  ports:
+   - 20008:18332
+  depends_on:
+   - a
+  links:
+   - a
+ 4d208f06-13c5-4ada-b3aa-7ca9e989c4f6:
+  image: bitcoinnode
+  ports:
+   - 20009:18332
+  depends_on:
+   - a
+  links:
+   - a
+ 95d8c5ce-9f3d-40de-af9e-86000ac3f744:
+  image: bitcoinnode
+  ports:
+   - 20010:18332
+  depends_on:
+   - a
+  links:
+   - a
