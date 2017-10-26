@@ -1,8 +1,11 @@
-version: '2'
+version: '3'
 services:
  bitcoindev:
   build: BitcoinDev
   image: bitcoindev
+ bitcoinClient:
+  build: ClientBaseImage
+  image: bitcoinnode
  a:
   build: MasterBaseImage
   image: bitcoinmnode
@@ -10,83 +13,117 @@ services:
    - 20000:18332
   depends_on:
   - bitcoindev
- eb7f06a4-9d76-452c-8f4d-e972c3e602b6:
+ b35fe16e-9b9b-470d-9404-ba56fe9eb960:
   image: bitcoinnode
   ports:
    - 20001:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- a3c83835-55ca-4368-84cc-ade4995891db:
+ 0d0c44da-169a-41ec-8546-5b0ff9485712:
   image: bitcoinnode
   ports:
    - 20002:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- eb504a2f-323b-4bf7-af9d-c82c47c94828:
+ f621bfa9-7bdd-4def-99e0-1dcf41dcc533:
   image: bitcoinnode
   ports:
    - 20003:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- 939c5cea-2a03-41a8-be6b-09f653bb4c35:
+ aec37275-1b6f-44c3-9ace-9fd71edc32a0:
   image: bitcoinnode
   ports:
    - 20004:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- 81e7e524-bd4a-48d5-b15a-8dd3d969392d:
+ 9f2019c6-f217-489b-9a76-0176e813b2c1:
   image: bitcoinnode
   ports:
    - 20005:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- 3e99cfa1-1638-4642-b668-4a9e4aed65f0:
+ 7d7f284d-31da-4708-b2b4-cd18dd24cd80:
   image: bitcoinnode
   ports:
    - 20006:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- 5e14faed-d64b-46d9-8070-e611d560c236:
+ cb829dfe-df6d-4617-889f-65cdbbf113d4:
   image: bitcoinnode
   ports:
    - 20007:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- f0061e41-3a64-4e0f-bcaa-2508547ca52d:
+ 426073b7-de44-45e5-a788-a2f176a1dd07:
   image: bitcoinnode
   ports:
    - 20008:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- 4d208f06-13c5-4ada-b3aa-7ca9e989c4f6:
+ b319a01b-5701-4b98-a231-23d25e89c88b:
   image: bitcoinnode
   ports:
    - 20009:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- 95d8c5ce-9f3d-40de-af9e-86000ac3f744:
+ 6b69c2e3-b640-42f5-be75-9f49308f9e44:
   image: bitcoinnode
   ports:
    - 20010:18332
+  networks:
+   - mybitcoinnetwork
+  deploy:
+   restart_policy:
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
+networks:
+ mybitcoinnetwork:
+  external:
+    name: mybitcoin
