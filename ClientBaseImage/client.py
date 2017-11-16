@@ -2,6 +2,7 @@ import thread
 import os
 import logging
 import random
+import time
 
 logging.basicConfig(level=logging.INFO)
 
@@ -15,7 +16,7 @@ def  create_daemon():
 #join pravite network
 def join_network():
     logging.info("Begin to join pravite network")
-    os.system('bitcoin-cli -regtest addnode a onetry')
+    os.system('bitcoind -addnode=mybitcoin_a -regtest -daemon')
     logging.info("Begin to join pravite network complete")
 
 #show information 
@@ -32,6 +33,12 @@ def getbalance():
 #main flow
 
 logging.info("Start main flow")
+logging.info("Waiting 30 sec for master node up")
+
+time.sleep( 30 )
+logging.info("Join network ")
+join_network()
+logging.info("Join network complete")
 
 while 1:
     #logging.info("server is running")

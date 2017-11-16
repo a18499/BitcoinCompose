@@ -9,14 +9,10 @@
 # make
 # make install
 
-echo "create private network"
 
-bitcoind -regtest -daemon
 
-sleep 5
+sleep 10
 
-echo "join private network"
-bitcoin-cli -regtest addnode mybitcoin add
 python client.py
 
 

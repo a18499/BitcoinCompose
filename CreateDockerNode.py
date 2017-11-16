@@ -29,15 +29,22 @@ with open("docker-compose.yml", "w") as myfile:
     myfile.write("\n")
     myfile.write("  ports:")
     myfile.write("\n")
+    myfile.write("   - 19000:18444")
+    myfile.write("\n")
     myfile.write("   - 20000:18332")
     myfile.write("\n")
     myfile.write("  depends_on:")
     myfile.write("\n")
     myfile.write("  - bitcoindev")
     myfile.write("\n")
+    myfile.write("  networks:")
+    myfile.write("\n")
+    myfile.write("  - mybitcoinnetwork")
+    myfile.write("\n")
     i=0
     while i < numberOfDockerNode:
         portsNumber = 20001+i
+        portsNumber2 = 19001+i
         nodeName = uuid.uuid4()
         print "Node Name: "+str(nodeName)
         myfile.write(" "+str(nodeName)+":")
@@ -45,6 +52,8 @@ with open("docker-compose.yml", "w") as myfile:
         myfile.write("  image: bitcoinnode")
         myfile.write("\n")
         myfile.write("  ports:")
+        myfile.write("\n")
+        myfile.write("   - "+str(portsNumber2)+":18444")
         myfile.write("\n")
         myfile.write("   - "+str(portsNumber)+":18332")
         myfile.write("\n")

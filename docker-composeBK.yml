@@ -10,42 +10,37 @@ services:
   build: MasterBaseImage
   image: bitcoinmnode
   ports:
+   - 19000:18444
    - 20000:18332
-  networks:
-   - mybitcoinnetwork
-  deploy:
-   restart_policy:
-    condition: on-failure   
   depends_on:
   - bitcoindev
- eb7f06a4-9d76-452c-8f4d-e972c3e602b6:
+  networks:
+   - mybitcoinnetwork
+ 6a8cbd35-a209-4261-b017-57fa4685a6be:
   image: bitcoinnode
   ports:
+   - 19001:18444
    - 20001:18332
   networks:
    - mybitcoinnetwork
   deploy:
    restart_policy:
-    condition: on-failure
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
- eb7f06a4-9d76-452c-8f4:
+ 6cd933d6-5d91-4265-95ac-6199f891d820:
   image: bitcoinnode
   ports:
+   - 19002:18444
    - 20002:18332
   networks:
    - mybitcoinnetwork
   deploy:
    restart_policy:
-    condition: on-failure
+     condition: on-failure
   depends_on:
    - a
-  links:
-   - a
 networks:
-  mybitcoinnetwork:
-    external:
-      name: mybitcoin
-
+ mybitcoinnetwork:
+  external:
+    name: mybitcoin
